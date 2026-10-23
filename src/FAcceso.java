@@ -6,7 +6,7 @@ public class FAcceso extends javax.swing.JFrame {
 
     Conexion cnx = new Conexion();
     
-    String rol = "SELECT rol FROM 'usuarios' WHERE nom_usr = '$s' AND nip = '%s";
+    String rol = "SELECT rol FROM 'usuarios' WHERE nom_usr = '%s' AND nip = '%s";
     
     int intentos = 0;
     
@@ -145,13 +145,13 @@ public class FAcceso extends javax.swing.JFrame {
         String tipo = cnx.obtenerDato(sql);
         
         switch (tipo) {
-            case "administrador":
+            case "Administrador":
                 FAdministrador fa = new FAdministrador();
                 cnx.desconectar();
                 this.dispose();
                 fa.setVisible(true);
             break;
-            case "visitante":
+            case "Visitante":
                 FRegistrados fr = new FRegistrados();
                 cnx.desconectar();
                 this.dispose();
